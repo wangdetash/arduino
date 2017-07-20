@@ -1,3 +1,5 @@
+//program to find gps location using arduno and display it on lcd display
+
 #include<LiquidCrystal.h>
 
 #include <SoftwareSerial.h>
