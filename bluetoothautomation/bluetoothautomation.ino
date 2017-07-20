@@ -1,3 +1,4 @@
+//the program for home automation using relay module through bluetooth
 The circuit:
  * LCD RS pin to digital pin 12
  * LCD Enable pin to digital pin 11
