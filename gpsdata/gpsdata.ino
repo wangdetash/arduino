@@ -14,15 +14,21 @@ void setup()
  delay(1000);
  Serial.print("................\n");
  delay(1000);
-  
- while(mySerial.available()==0);
+while(mySerial.available()==0);
 String gps = mySerial.readStringUntil('\r');
+if(gps.substring(0,6)=="$GPGGA")
+{
+Serial.print("UTC:");
+Serial.print(gps.substring(7,8));
+Serial.print(":");
+Serial.print(gps.substring(9,10));
+Serial.print(":");
+Serial.println(gps.substring(11,12));
 Serial.print("LAT:");
-Serial.print(gps.substring(12,23));
-Serial.print('\n');
+Serial.println(gps.substring(14,29));
 Serial.print("LONG:");
-Serial.print(gps.substring(24,38));
-Serial.print('\n');
+Serial.println(gps.substring(30,42));
+}
 }
 
 
